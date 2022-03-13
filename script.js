@@ -104,20 +104,7 @@ function plus() {
         }
     }
     else if (firstOperand != undefined && secondOperand != undefined && operation != undefined) {
-        switch (operation) {
-            case "+":
-                txt = firstOperand + secondOperand;
-                break;
-            case "-":
-                txt = firstOperand - secondOperand;
-                break;
-            case "*":
-                txt = firstOperand * secondOperand;
-                break;
-            case "/":
-                txt = firstOperand / secondOperand;
-                break;
-        }
+        calculate();
         firstOperand = txt;
         secondOperand = undefined;
         operation = "+";
@@ -159,20 +146,7 @@ function minus() {
         }
     }
     else if (firstOperand != undefined && secondOperand != undefined && operation != undefined) {
-        switch (operation) {
-            case "+":
-                txt = firstOperand + secondOperand;
-                break;
-            case "-":
-                txt = firstOperand - secondOperand;
-                break;
-            case "*":
-                txt = firstOperand * secondOperand;
-                break;
-            case "/":
-                txt = firstOperand / secondOperand;
-                break;
-        }
+        calculate();
         firstOperand = txt;
         secondOperand = undefined;
         operation = "-";
@@ -214,20 +188,7 @@ function into() {
         }
     }
     else if (firstOperand != undefined && secondOperand != undefined && operation != undefined) {
-        switch (operation) {
-            case "+":
-                txt = firstOperand + secondOperand;
-                break;
-            case "-":
-                txt = firstOperand - secondOperand;
-                break;
-            case "*":
-                txt = firstOperand * secondOperand;
-                break;
-            case "/":
-                txt = firstOperand / secondOperand;
-                break;
-        }
+        calculate();
         firstOperand = txt;
         secondOperand = undefined;
         operation = "*";
@@ -269,20 +230,7 @@ function numdiv() {
         }
     }
     else if (firstOperand != undefined && secondOperand != undefined && operation != undefined) {
-        switch (operation) {
-            case "+":
-                txt = firstOperand + secondOperand;
-                break;
-            case "-":
-                txt = firstOperand - secondOperand;
-                break;
-            case "*":
-                txt = firstOperand * secondOperand;
-                break;
-            case "/":
-                txt = firstOperand / secondOperand;
-                break;
-        }
+        calculate();
         firstOperand = txt;
         secondOperand = undefined;
         operation = "/";
@@ -307,20 +255,7 @@ function equals() {
         else {
             secondOperand = parseInt(document.getElementById('display').innerText);
         }
-        switch (operation) {
-            case "+":
-                txt = firstOperand + secondOperand;
-                break;
-            case "-":
-                txt = firstOperand - secondOperand;
-                break;
-            case "*":
-                txt = firstOperand * secondOperand;
-                break;
-            case "/":
-                txt = firstOperand / secondOperand;
-                break;
-        }
+        calculate();
         firstOperand = undefined;
         secondOperand = undefined;
         operation = undefined;
@@ -368,7 +303,10 @@ function pm() {
     if (document.getElementById('display').innerText === "") {
         document.getElementById('display').innerHTML = "-";
     }
-    else if (document.getElementById('display').innerText !== "") {
+    else if(document.getElementById('display').innerText === "-"){
+        document.getElementById('display').innerHTML = "";
+    }
+    else{
         if (document.getElementById('display').innerText.includes('.')) {
             txt = parseFloat(document.getElementById('display').innerText);
             if(txt.toString().includes("-")){
@@ -388,5 +326,22 @@ function pm() {
             }
         }
         document.getElementById('display').innerHTML=txt;
+    }
+}
+function calculate(){
+    
+    switch (operation) {
+        case "+":
+            txt = firstOperand + secondOperand;
+            break;
+        case "-":
+            txt = firstOperand - secondOperand;
+            break;
+        case "*":
+            txt = firstOperand * secondOperand;
+            break;
+        case "/":
+            txt = firstOperand / secondOperand;
+            break;
     }
 }
