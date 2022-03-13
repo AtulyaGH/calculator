@@ -75,8 +75,7 @@ button:active{
         background: linear-gradient(to right, rgb(120, 111, 121) 10%,rgb(236, 224, 171));
         width: 100%;
         min-height:100vh;
-        margin: 0; 
-        overflow: hidden;  
+        margin: 0;   
         font-size: 7vw; 
     }
     .calc{
