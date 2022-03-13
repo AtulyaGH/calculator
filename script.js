@@ -360,7 +360,7 @@ function del() {
         operation = undefined;
         firstOperand = undefined;
         txt = document.getElementById('display1').innerHTML.toString();
-        document.getElementById('display').innerHTML = txt.slice(-1);
+        document.getElementById('display').innerHTML = txt.slice();
         document.getElementById('display1').innerHTML = "";
     }
 }
